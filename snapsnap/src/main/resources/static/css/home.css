@@ -1,31 +1,35 @@
-
-CSS code
-This is the css code used to create this bootstrap snippet, You can copy and paste the following css code inside a page with bootstrap 4.1.1 included, to get the result that you can see in the preview selection
-
+.mt-2{
+	margin-top: 2px;
+}
 body {
-            background-color: #eeeeee;
-        }
+	background-color: #eeeeee;
+}
 
-        .h7 {
-            font-size: 0.8rem;
-        }
+.h7 {
+	font-size: 0.8rem;
+}
 
-        .gedf-wrapper {
-            margin-top: 0.97rem;
-        }
+.card-text{
+	color: black;
+}
 
-        @media (min-width: 992px) {
-            .gedf-main {
-                padding-left: 4rem;
-                padding-right: 4rem;
-            }
-            .gedf-card {
-                margin-bottom: 2.77rem;
-            }
-        }
+.gedf-wrapper {
+	margin-top: 0.97rem;
+}
 
-        /**Reset Bootstrap*/
-        .dropdown-toggle::after {
-            content: none;
-            display: none;
-        }
+@media (min-width: 992px) {
+	.gedf-main {
+		padding-left: 4rem;
+		padding-right: 4rem;
+	}
+
+	.gedf-card {
+		margin-bottom: 2.77rem;
+	}
+}
+
+/**Reset Bootstrap*/
+.dropdown-toggle::after {
+	content: none;
+	display: none;
+}
