@@ -25,7 +25,7 @@ public class Comment {
     private String image;
 
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "created_at", nullable = true, insertable = false, columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
+    @Column(name = "created_at", nullable = true, insertable = false, updatable = false, columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     private Date createdAt;
 
     // Getters and setters
@@ -34,47 +34,53 @@ public class Comment {
         return id;
     }
 
-    public void setId(Long id) {
+    public Comment setId(Long id) {
         this.id = id;
+        return this;
     }
 
     public String getUserId() {
         return userId;
     }
 
-    public void setUserId(String userId) {
+    public Comment setUserId(String userId) {
         this.userId = userId;
+        return this;
     }
 
     public Post getPost() {
         return post;
     }
 
-    public void setPost(Post post) {
+    public Comment setPost(Post post) {
         this.post = post;
+        return this;
     }
 
     public String getContent() {
         return content;
     }
 
-    public void setContent(String content) {
+    public Comment setContent(String content) {
         this.content = content;
+        return this;
     }
 
     public String getImage() {
         return image;
     }
 
-    public void setImage(String image) {
+    public Comment setImage(String image) {
         this.image = image;
+        return this;
     }
 
     public Date getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(Date createdAt) {
+    public Comment setCreatedAt(Date createdAt) {
         this.createdAt = createdAt;
+        return this;
     }
 }

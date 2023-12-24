@@ -7,63 +7,68 @@ import java.util.Date;
 @Table(name = "msg")
 public class Message {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-	@Column(name = "user_id", length = 100)
-	private String userId;
+    @Column(name = "user_id", length = 100)
+    private String userId;
 
-	@Column(name = "content", columnDefinition = "TEXT")
-	private String content;
+    @Column(name = "content", columnDefinition = "TEXT")
+    private String content;
 
-	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name = "created_at", nullable = false, updatable = false, insertable = false, columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
-	private Date createdAt;
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "created_at", nullable = false, updatable = false, insertable = false, columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
+    private Date createdAt;
 
-	@ManyToOne
-	@JoinColumn(name = "msg_folder_id", referencedColumnName = "id")
-	private MsgFolder msgFolder;
+    @ManyToOne
+    @JoinColumn(name = "msg_folder_id", referencedColumnName = "id")
+    private MsgFolder msgFolder;
 
-	// Getters and setters
+    // Getters and setters
 
-	public Long getId() {
-		return id;
-	}
+    public Long getId() {
+        return id;
+    }
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    public Message setId(Long id) {
+        this.id = id;
+        return this;
+    }
 
-	public String getUserId() {
-		return userId;
-	}
+    public String getUserId() {
+        return userId;
+    }
 
-	public void setUserId(String userId) {
-		this.userId = userId;
-	}
+    public Message setUserId(String userId) {
+        this.userId = userId;
+        return this;
+    }
 
-	public String getContent() {
-		return content;
-	}
+    public String getContent() {
+        return content;
+    }
 
-	public void setContent(String content) {
-		this.content = content;
-	}
+    public Message setContent(String content) {
+        this.content = content;
+        return this;
+    }
 
-	public Date getCreatedAt() {
-		return createdAt;
-	}
+    public Date getCreatedAt() {
+        return createdAt;
+    }
 
-	public void setCreatedAt(Date createdAt) {
-		this.createdAt = createdAt;
-	}
+    public Message setCreatedAt(Date createdAt) {
+        this.createdAt = createdAt;
+        return this;
+    }
 
-	public MsgFolder getMsgFolder() {
-		return msgFolder;
-	}
+    public MsgFolder getMsgFolder() {
+        return msgFolder;
+    }
 
-	public void setMsgFolder(MsgFolder msgFolder) {
-		this.msgFolder = msgFolder;
-	}
+    public Message setMsgFolder(MsgFolder msgFolder) {
+        this.msgFolder = msgFolder;
+        return this;
+    }
 }

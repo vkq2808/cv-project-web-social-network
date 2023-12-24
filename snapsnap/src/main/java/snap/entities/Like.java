@@ -19,7 +19,7 @@ public class Like {
     private Post post;
 
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "created_at", nullable = true, insertable = false, columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
+    @Column(name = "created_at", nullable = true, insertable = false, updatable = false, columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     private Date createdAt;
 
     // Constructors, getters, and setters
@@ -39,31 +39,35 @@ public class Like {
         return id;
     }
 
-    public void setId(Long id) {
+    public Like setId(Long id) {
         this.id = id;
+        return this;
     }
 
     public String getUserId() {
         return userId;
     }
 
-    public void setUserId(String userId) {
+    public Like setUserId(String userId) {
         this.userId = userId;
+        return this;
     }
 
     public Post getPost() {
         return post;
     }
 
-    public void setPost(Post post) {
+    public Like setPost(Post post) {
         this.post = post;
+        return this;
     }
 
     public Date getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(Date createdAt) {
+    public Like setCreatedAt(Date createdAt) {
         this.createdAt = createdAt;
+        return this;
     }
 }

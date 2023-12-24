@@ -8,107 +8,116 @@ import java.util.List;
 @Table(name = "post")
 public class Post {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name = "created_at", nullable = false, insertable = false, columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
-	private Date createdAt;
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "created_at", nullable = false, insertable = false, updatable = false, columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
+    private Date createdAt;
 
-	@Column(name = "user_id", length = 100, nullable = false)
-	private String userId;
+    @Column(name = "user_id", length = 100, nullable = false)
+    private String userId;
 
-	@Column(name = "content", columnDefinition = "TEXT")
-	private String content;
+    @Column(name = "content", columnDefinition = "TEXT")
+    private String content;
 
-	@Column(name = "image", columnDefinition = "TEXT")
-	private String image;
+    @Column(name = "image", columnDefinition = "TEXT")
+    private String image;
 
-	@Column(name = "status", nullable = false, columnDefinition = "TINYINT DEFAULT 1")
-	private Integer status;
+    @Column(name = "status", nullable = false, columnDefinition = "TINYINT DEFAULT 1")
+    private Integer status;
 
-	@ManyToOne
-	@JoinColumn(name = "user_id", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
-	private User user;
+    @ManyToOne
+    @JoinColumn(name = "user_id", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
+    private User user;
 
-	@OneToMany(mappedBy = "post", cascade = CascadeType.ALL, orphanRemoval = true)
-	private List<Like> likes;
+    @OneToMany(mappedBy = "post", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Like> likes;
 
-	@OneToMany(mappedBy = "post", cascade = CascadeType.ALL, orphanRemoval = true)
-	private List<Comment> comments;
+    @OneToMany(mappedBy = "post", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Comment> comments;
 
-	// Getters and setters
+    // Getters and setters
 
-	public Long getId() {
-		return id;
-	}
+    public Long getId() {
+        return id;
+    }
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    public Post setId(Long id) {
+        this.id = id;
+        return this;
+    }
 
-	public Date getCreatedAt() {
-		return createdAt;
-	}
+    public Date getCreatedAt() {
+        return createdAt;
+    }
 
-	public void setCreatedAt(Date createdAt) {
-		this.createdAt = createdAt;
-	}
+    public Post setCreatedAt(Date createdAt) {
+        this.createdAt = createdAt;
+        return this;
+    }
 
-	public String getUserId() {
-		return userId;
-	}
+    public String getUserId() {
+        return userId;
+    }
 
-	public void setUserId(String userId) {
-		this.userId = userId;
-	}
+    public Post setUserId(String userId) {
+        this.userId = userId;
+        return this;
+    }
 
-	public String getContent() {
-		return content;
-	}
+    public String getContent() {
+        return content;
+    }
 
-	public void setContent(String content) {
-		this.content = content;
-	}
+    public Post setContent(String content) {
+        this.content = content;
+        return this;
+    }
 
-	public String getImage() {
-		return image;
-	}
+    public String getImage() {
+        return image;
+    }
 
-	public void setImage(String image) {
-		this.image = image;
-	}
+    public Post setImage(String image) {
+        this.image = image;
+        return this;
+    }
 
-	public Integer getStatus() {
-		return status;
-	}
+    public Integer getStatus() {
+        return status;
+    }
 
-	public void setStatus(Integer status) {
-		this.status = status;
-	}
+    public Post setStatus(Integer status) {
+        this.status = status;
+        return this;
+    }
 
-	public User getUser() {
-		return user;
-	}
+    public User getUser() {
+        return user;
+    }
 
-	public void setUser(User user) {
-		this.user = user;
-	}
+    public Post setUser(User user) {
+        this.user = user;
+        return this;
+    }
 
-	public List<Like> getLikes() {
-		return likes;
-	}
+    public List<Like> getLikes() {
+        return likes;
+    }
 
-	public void setLikes(List<Like> likes) {
-		this.likes = likes;
-	}
+    public Post setLikes(List<Like> likes) {
+        this.likes = likes;
+        return this;
+    }
 
-	public List<Comment> getComments() {
-		return comments;
-	}
+    public List<Comment> getComments() {
+        return comments;
+    }
 
-	public void setComments(List<Comment> comments) {
-		this.comments = comments;
-	}
+    public Post setComments(List<Comment> comments) {
+        this.comments = comments;
+        return this;
+    }
 }

@@ -6,88 +6,108 @@ import jakarta.persistence.*;
 @Entity
 @Table(name = "user")
 public class User {
-	@Id
-	@Column(name = "id", length = 100, nullable = false)
-	private String id;
 
-	@Column(name = "name", length = 100, nullable = false)
-	private String name;
+    @Id
+    @Column(name = "id", length = 100, nullable = false)
+    private String id;
 
-	@Column(name = "phone", length = 12, nullable = false, unique = true)
-	private String phone;
+    @Column(name = "name", length = 100, nullable = false)
+    private String name;
 
-	@Column(name = "email", columnDefinition = "TEXT", nullable = false)
-	private String email;
+    @Column(name = "phone", length = 12, nullable = false, unique = true)
+    private String phone;
 
-	@Temporal(TemporalType.DATE)
-	@Column(name = "birthdate", nullable = true)
-	private Date birthdate;
+    @Column(name = "email", columnDefinition = "TEXT", nullable = false)
+    private String email;
 
-	@Column(name = "gender", length = 1, nullable = false, columnDefinition = "VARCHAR(1) DEFAULT 'U'")
-	private String gender;
+    @Column(name = "password", nullable = false) // Thêm trường password
+    private String password;
 
-	@Column(name = "image", length = 1024, nullable = true)
-	private String image;
+    @Temporal(TemporalType.DATE)
+    @Column(name = "birthdate", nullable = true)
+    private Date birthdate;
 
-	// Constructors, getters, and setters
+    @Column(name = "gender", length = 1, nullable = false, columnDefinition = "VARCHAR(1) DEFAULT 'U'")
+    private String gender;
 
-	// Default constructor required by JPA
-	public User() {
-	}
+    @Column(name = "image", length = 1024, nullable = true)
+    private String image;
 
-	public String getId() {
-		return id;
-	}
+    // Constructors, getters, and setters
 
-	public void setId(String id) {
-		this.id = id;
-	}
+    // Default constructor required by JPA
+    public User() {
+    }
 
-	public String getName() {
-		return name;
-	}
+    public User setId(String id) {
+        this.id = id;
+        return this;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public User setName(String name) {
+        this.name = name;
+        return this;
+    }
 
-	public String getPhone() {
-		return phone;
-	}
+    public User setPhone(String phone) {
+        this.phone = phone;
+        return this;
+    }
 
-	public void setPhone(String phone) {
-		this.phone = phone;
-	}
+    public User setEmail(String email) {
+        this.email = email;
+        return this;
+    }
 
-	public String getEmail() {
-		return email;
-	}
+    public User setPassword(String password) {
+        this.password = password;
+        return this;
+    }
 
-	public void setEmail(String email) {
-		this.email = email;
-	}
+    public User setBirthdate(Date birthdate) {
+        this.birthdate = birthdate;
+        return this;
+    }
 
-	public Date getBirthdate() {
-		return birthdate;
-	}
+    public User setGender(String gender) {
+        this.gender = gender;
+        return this;
+    }
 
-	public void setBirthdate(Date birthdate) {
-		this.birthdate = birthdate;
-	}
+    public User setImage(String image) {
+        this.image = image;
+        return this;
+    }
 
-	public String getGender() {
-		return gender;
-	}
+    public String getId() {
+        return id;
+    }
 
-	public void setGender(String gender) {
-		this.gender = gender;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public String getImage() {
-		return image;
-	}
+    public String getPhone() {
+        return phone;
+    }
 
-	public void setImage(String image) {
-		this.image = image;
-	}
+    public String getEmail() {
+        return email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public Date getBirthdate() {
+        return birthdate;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public String getImage() {
+        return image;
+    }
 }
